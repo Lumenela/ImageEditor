@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LViewController : UIViewController
+@interface LViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+
+- (IBAction)takePicture;
+- (IBAction)selectImageFromPhotoLibrary;
 
 @end

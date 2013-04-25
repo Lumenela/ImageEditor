@@ -1,23 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="LViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="5F5-Xa-8R8">
+                                <items>
+                                    <navigationItem title="Title" id="Sjq-SO-CqF"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftk-wb-Xld">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Lz-1v-M4j"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-yh-Zsg">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="LvI-7f-6Nw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePicture" destination="2" eventType="touchUpInside" id="dTj-12-xdJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-mp-MYR">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="Rf4-v0-Qnt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Gallery">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectImageFromPhotoLibrary" destination="2" eventType="touchUpInside" id="uy4-n4-yfm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SELECT IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-jK-wne">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="87" id="JZo-yU-TAB"/>
+                                            <constraint firstAttribute="width" constant="248" id="Zhg-tC-nN3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8aP-jK-wne" firstAttribute="leading" secondItem="Ftk-wb-Xld" secondAttribute="leading" constant="32" id="9oL-VW-wkC"/>
+                                    <constraint firstAttribute="bottom" secondItem="dBB-yh-Zsg" secondAttribute="bottom" constant="29" id="E6i-J1-2FY"/>
+                                    <constraint firstItem="8aP-jK-wne" firstAttribute="trailing" secondItem="tsf-mp-MYR" secondAttribute="trailing" type="default" id="HXB-KB-MYe"/>
+                                    <constraint firstItem="4Lz-1v-M4j" firstAttribute="bottom" secondItem="Ftk-wb-Xld" secondAttribute="bottom" type="default" id="VvN-zb-6p2"/>
+                                    <constraint firstItem="4Lz-1v-M4j" firstAttribute="top" secondItem="Ftk-wb-Xld" secondAttribute="top" type="default" id="WX9-ba-cf4"/>
+                                    <constraint firstItem="tsf-mp-MYR" firstAttribute="baseline" secondItem="dBB-yh-Zsg" secondAttribute="baseline" type="default" id="aCZ-pZ-KEm"/>
+                                    <constraint firstItem="8aP-jK-wne" firstAttribute="leading" secondItem="dBB-yh-Zsg" secondAttribute="leading" type="default" id="ebD-pP-rE1"/>
+                                    <constraint firstItem="8aP-jK-wne" firstAttribute="top" secondItem="Ftk-wb-Xld" secondAttribute="top" constant="81" id="nV8-zM-DcI"/>
+                                    <constraint firstItem="4Lz-1v-M4j" firstAttribute="trailing" secondItem="Ftk-wb-Xld" secondAttribute="trailing" type="default" id="qnN-EY-ZkO"/>
+                                    <constraint firstItem="4Lz-1v-M4j" firstAttribute="leading" secondItem="Ftk-wb-Xld" secondAttribute="leading" type="default" id="sbG-Pc-9DN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5F5-Xa-8R8" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="7k0-1E-Z6d"/>
+                            <constraint firstItem="Ftk-wb-Xld" firstAttribute="centerX" secondItem="5F5-Xa-8R8" secondAttribute="centerX" type="default" id="E4O-Zl-tXt"/>
+                            <constraint firstAttribute="bottom" secondItem="Ftk-wb-Xld" secondAttribute="bottom" constant="123" id="OyV-fO-3iU"/>
+                            <constraint firstItem="5F5-Xa-8R8" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="lAV-bd-0K7"/>
+                            <constraint firstItem="5F5-Xa-8R8" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="nCw-gr-7hl"/>
+                            <constraint firstItem="Ftk-wb-Xld" firstAttribute="top" secondItem="3" secondAttribute="top" constant="60" id="t16-D6-3Nl"/>
+                            <constraint firstItem="Ftk-wb-Xld" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="3" id="xeZ-3a-rkX"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="4Lz-1v-M4j" id="97Z-h0-att"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="LViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectImageFromPhotoLibrary"/>
+                <relationship kind="action" name="takePicture"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
