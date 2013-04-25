@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042913E91729833300153650 /* LFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 042913E81729833300153650 /* LFilter.m */; };
+		042913F117299BDA00153650 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913EC17299BDA00153650 /* add.png */; };
+		042913F217299BDA00153650 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913ED17299BDA00153650 /* camera.png */; };
+		042913F317299BDA00153650 /* configure.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913EE17299BDA00153650 /* configure.png */; };
+		042913F417299BDA00153650 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913EF17299BDA00153650 /* gallery.png */; };
+		042913F517299BDA00153650 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F017299BDA00153650 /* undo.png */; };
+		042913F71729A39300153650 /* contrast.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F61729A39300153650 /* contrast.png */; };
+		042913F91729ACD700153650 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042913F81729ACD700153650 /* QuartzCore.framework */; };
+		042913FB1729BB2400153650 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913FA1729BB2400153650 /* sample.png */; };
 		0447A8EA17292FBF00789461 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A8E917292FBF00789461 /* OpenCV.framework */; };
 		0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A8F5172934A500789461 /* LPhotoFilter.mm */; };
 		0447A90217293A1900789461 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A90117293A1900789461 /* UIImage+OpenCV.mm */; };
@@ -29,6 +38,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042913E71729833300153650 /* LFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFilter.h; sourceTree = "<group>"; };
+		042913E81729833300153650 /* LFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFilter.m; sourceTree = "<group>"; };
+		042913EC17299BDA00153650 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ImageEditor/icons/add.png; sourceTree = "<group>"; };
+		042913ED17299BDA00153650 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ImageEditor/icons/camera.png; sourceTree = "<group>"; };
+		042913EE17299BDA00153650 /* configure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = configure.png; path = ImageEditor/icons/configure.png; sourceTree = "<group>"; };
+		042913EF17299BDA00153650 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery.png; path = ImageEditor/icons/gallery.png; sourceTree = "<group>"; };
+		042913F017299BDA00153650 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = undo.png; path = ImageEditor/icons/undo.png; sourceTree = "<group>"; };
+		042913F61729A39300153650 /* contrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contrast.png; path = ImageEditor/icons/contrast.png; sourceTree = "<group>"; };
+		042913F81729ACD700153650 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		042913FA1729BB2400153650 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ImageEditor/icons/sample.png; sourceTree = "<group>"; };
 		0447A8E917292FBF00789461 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenCV.framework; sourceTree = "<group>"; };
 		0447A8F4172934A500789461 /* LPhotoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPhotoFilter.h; sourceTree = "<group>"; };
 		0447A8F5172934A500789461 /* LPhotoFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LPhotoFilter.mm; sourceTree = "<group>"; };
@@ -62,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042913F91729ACD700153650 /* QuartzCore.framework in Frameworks */,
 				0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */,
 				0447A90517293B1C00789461 /* libz.dylib in Frameworks */,
 				0447A90417293B1500789461 /* libstdc++.6.0.9.dylib in Frameworks */,
@@ -76,6 +96,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042913EB17299BC800153650 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				042913FA1729BB2400153650 /* sample.png */,
+				042913F61729A39300153650 /* contrast.png */,
+				042913EC17299BDA00153650 /* add.png */,
+				042913ED17299BDA00153650 /* camera.png */,
+				042913EE17299BDA00153650 /* configure.png */,
+				042913EF17299BDA00153650 /* gallery.png */,
+				042913F017299BDA00153650 /* undo.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		0447A8F0172932C100789461 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +117,8 @@
 				0447A90117293A1900789461 /* UIImage+OpenCV.mm */,
 				0447A8F4172934A500789461 /* LPhotoFilter.h */,
 				0447A8F5172934A500789461 /* LPhotoFilter.mm */,
+				042913E71729833300153650 /* LFilter.h */,
+				042913E81729833300153650 /* LFilter.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -90,6 +126,7 @@
 		0447A90C172954E800789461 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				042913EB17299BC800153650 /* icons */,
 				0447A90D1729550C00789461 /* back_pattern.png */,
 			);
 			name = Resources;
@@ -98,6 +135,7 @@
 		048A01E71728929E004A3925 = {
 			isa = PBXGroup;
 			children = (
+				042913F81729ACD700153650 /* QuartzCore.framework */,
 				0447A90C172954E800789461 /* Resources */,
 				0447A90A17293F7C00789461 /* CoreImage.framework */,
 				048A01FC1728929F004A3925 /* ImageEditor */,
@@ -214,6 +252,13 @@
 				048A020D172892A2004A3925 /* Default-568h@2x.png in Resources */,
 				048A0210172892A3004A3925 /* MainStoryboard.storyboard in Resources */,
 				0447A90E1729550C00789461 /* back_pattern.png in Resources */,
+				042913F117299BDA00153650 /* add.png in Resources */,
+				042913F217299BDA00153650 /* camera.png in Resources */,
+				042913F317299BDA00153650 /* configure.png in Resources */,
+				042913F417299BDA00153650 /* gallery.png in Resources */,
+				042913F517299BDA00153650 /* undo.png in Resources */,
+				042913F71729A39300153650 /* contrast.png in Resources */,
+				042913FB1729BB2400153650 /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +274,7 @@
 				048A0213172892A3004A3925 /* LViewController.m in Sources */,
 				0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */,
 				0447A90217293A1900789461 /* UIImage+OpenCV.mm in Sources */,
+				042913E91729833300153650 /* LFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

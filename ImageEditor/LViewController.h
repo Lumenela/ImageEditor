@@ -11,17 +11,22 @@
 @interface LViewController : UIViewController<UIImagePickerControllerDelegate,
                                                 UINavigationControllerDelegate,
                                                 UICollectionViewDataSource,
-                                                UICollectionViewDelegateFlowLayout>
+                                                UICollectionViewDelegateFlowLayout,
+                                                UIAlertViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) IBOutlet UIView  *imageSelectionView;
+@property (nonatomic, strong) IBOutlet UIView *imageSelectionView;
+@property (nonatomic, strong) IBOutlet UIView *imagePlaceholder;
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) IBOutlet UIButton *undoButton;
+@property (nonatomic, strong) IBOutlet UIButton *configureButton;
+@property (nonatomic, strong) IBOutlet UIButton *addButton;
+@property (nonatomic, strong) IBOutlet UIButton *autoContrastButton;
+
 
 - (IBAction)takePicture;
 - (IBAction)selectImageFromPhotoLibrary;
-- (IBAction)addConstantToImage:(id)sender;
 
 - (IBAction)undo:(id)sender;
 
