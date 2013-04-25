@@ -74,7 +74,7 @@ static void ProviderReleaseDataNOP(void *info, const void *data, size_t size)
 
 + (UIImage *)imageWithCVMat:(const cv::Mat&)cvMat
 {
-    return [[[UIImage alloc] initWithCVMat:cvMat] autorelease];
+    return [[UIImage alloc] initWithCVMat:cvMat];
 }
 
 - (id)initWithCVMat:(const cv::Mat&)cvMat
@@ -92,7 +92,7 @@ static void ProviderReleaseDataNOP(void *info, const void *data, size_t size)
         colorSpace = CGColorSpaceCreateDeviceRGB();
     }
     
-    CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)data);
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)CFBridgingRetain(data));
     
     CGImageRef imageRef = CGImageCreate(cvMat.cols,                                     // Width
                                         cvMat.rows,                                     // Height
