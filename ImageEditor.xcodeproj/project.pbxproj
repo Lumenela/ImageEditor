@@ -12,6 +12,8 @@
 		0447A90217293A1900789461 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A90117293A1900789461 /* UIImage+OpenCV.mm */; };
 		0447A90417293B1500789461 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */; };
 		0447A90517293B1C00789461 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A8F7172937FE00789461 /* libz.dylib */; };
+		0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A90A17293F7C00789461 /* CoreImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0447A90E1729550C00789461 /* back_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0447A90D1729550C00789461 /* back_pattern.png */; };
 		048A01F71728929F004A3925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F61728929F004A3925 /* UIKit.framework */; };
 		048A01F91728929F004A3925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F81728929F004A3925 /* Foundation.framework */; };
 		048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01FA1728929F004A3925 /* CoreGraphics.framework */; };
@@ -34,6 +36,8 @@
 		0447A90017293A1900789461 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		0447A90117293A1900789461 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		0447A90A17293F7C00789461 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		0447A90D1729550C00789461 /* back_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_pattern.png; path = "../subtlepatterns-SubtlePatterns-a8202d6/back_pattern.png"; sourceTree = "<group>"; };
 		048A01F21728929F004A3925 /* ImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A01F61728929F004A3925 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		048A01F81728929F004A3925 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */,
 				0447A90517293B1C00789461 /* libz.dylib in Frameworks */,
 				0447A90417293B1500789461 /* libstdc++.6.0.9.dylib in Frameworks */,
 				048A021A1728ABAB004A3925 /* MobileCoreServices.framework in Frameworks */,
@@ -82,11 +87,19 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		0447A90C172954E800789461 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0447A90D1729550C00789461 /* back_pattern.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		048A01E71728929E004A3925 = {
 			isa = PBXGroup;
 			children = (
-				0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */,
-				0447A8F7172937FE00789461 /* libz.dylib */,
+				0447A90C172954E800789461 /* Resources */,
+				0447A90A17293F7C00789461 /* CoreImage.framework */,
 				048A01FC1728929F004A3925 /* ImageEditor */,
 				048A01F51728929F004A3925 /* Frameworks */,
 				048A01F31728929F004A3925 /* Products */,
@@ -104,6 +117,8 @@
 		048A01F51728929F004A3925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */,
+				0447A8F7172937FE00789461 /* libz.dylib */,
 				048A02191728ABAB004A3925 /* MobileCoreServices.framework */,
 				0447A8E917292FBF00789461 /* OpenCV.framework */,
 				048A01F61728929F004A3925 /* UIKit.framework */,
@@ -198,6 +213,7 @@
 				048A020B172892A2004A3925 /* Default@2x.png in Resources */,
 				048A020D172892A2004A3925 /* Default-568h@2x.png in Resources */,
 				048A0210172892A3004A3925 /* MainStoryboard.storyboard in Resources */,
+				0447A90E1729550C00789461 /* back_pattern.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

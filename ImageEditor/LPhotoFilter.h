@@ -11,7 +11,7 @@
 @interface LPhotoFilter : NSObject
 
 - (id)initWithImage:(UIImage *)image;
-- (UIImage *)addDefault;
+- (UIImage *)addDefaultConstant;
 - (UIImage *)addConstant:(int)constant;
 
 @end
