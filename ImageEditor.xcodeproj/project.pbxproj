@@ -18,6 +18,7 @@
 		048A020D172892A2004A3925 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048A020C172892A2004A3925 /* Default-568h@2x.png */; };
 		048A0210172892A3004A3925 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A020E172892A2004A3925 /* MainStoryboard.storyboard */; };
 		048A0213172892A3004A3925 /* LViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A0212172892A3004A3925 /* LViewController.m */; };
+		048A021A1728ABAB004A3925 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A02191728ABAB004A3925 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		048A020F172892A3004A3925 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		048A0211172892A3004A3925 /* LViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LViewController.h; sourceTree = "<group>"; };
 		048A0212172892A3004A3925 /* LViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LViewController.m; sourceTree = "<group>"; };
+		048A02191728ABAB004A3925 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048A021A1728ABAB004A3925 /* MobileCoreServices.framework in Frameworks */,
 				048A01F71728929F004A3925 /* UIKit.framework in Frameworks */,
 				048A01F91728929F004A3925 /* Foundation.framework in Frameworks */,
 				048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +59,7 @@
 		048A01E71728929E004A3925 = {
 			isa = PBXGroup;
 			children = (
+				048A02191728ABAB004A3925 /* MobileCoreServices.framework */,
 				048A01FC1728929F004A3925 /* ImageEditor */,
 				048A01F51728929F004A3925 /* Frameworks */,
 				048A01F31728929F004A3925 /* Products */,
