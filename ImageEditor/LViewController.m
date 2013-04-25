@@ -83,6 +83,7 @@
 - (void)showImage:(UIImage *)image
 {
     [_imageView setImage:image];
+    [_imageSelectionView setHidden:YES];
     [_imageView setNeedsDisplay];
 }
 
@@ -104,7 +105,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             imageToSave = originalImage;
         }
         
-        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
+        //UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
         _image = imageToSave;
         [self showImage:_image];
     }

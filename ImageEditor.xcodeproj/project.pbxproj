@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0447A8EA17292FBF00789461 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A8E917292FBF00789461 /* OpenCV.framework */; };
+		0447A8F31729330000789461 /* UIImage+OpenCV.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A8F21729330000789461 /* UIImage+OpenCV.m */; };
 		048A01F71728929F004A3925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F61728929F004A3925 /* UIKit.framework */; };
 		048A01F91728929F004A3925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F81728929F004A3925 /* Foundation.framework */; };
 		048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01FA1728929F004A3925 /* CoreGraphics.framework */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0447A8E917292FBF00789461 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenCV.framework; sourceTree = "<group>"; };
+		0447A8F11729330000789461 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		0447A8F21729330000789461 /* UIImage+OpenCV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+OpenCV.m"; sourceTree = "<group>"; };
 		048A01F21728929F004A3925 /* ImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A01F61728929F004A3925 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		048A01F81728929F004A3925 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,15 +55,26 @@
 				048A01F71728929F004A3925 /* UIKit.framework in Frameworks */,
 				048A01F91728929F004A3925 /* Foundation.framework in Frameworks */,
 				048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */,
+				0447A8EA17292FBF00789461 /* OpenCV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0447A8F0172932C100789461 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0447A8F11729330000789461 /* UIImage+OpenCV.h */,
+				0447A8F21729330000789461 /* UIImage+OpenCV.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		048A01E71728929E004A3925 = {
 			isa = PBXGroup;
 			children = (
+				04BBFAE517292C3F004AF8AB /* OpenCV */,
 				048A02191728ABAB004A3925 /* MobileCoreServices.framework */,
 				048A01FC1728929F004A3925 /* ImageEditor */,
 				048A01F51728929F004A3925 /* Frameworks */,
@@ -77,6 +93,7 @@
 		048A01F51728929F004A3925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0447A8E917292FBF00789461 /* OpenCV.framework */,
 				048A01F61728929F004A3925 /* UIKit.framework */,
 				048A01F81728929F004A3925 /* Foundation.framework */,
 				048A01FA1728929F004A3925 /* CoreGraphics.framework */,
@@ -87,6 +104,7 @@
 		048A01FC1728929F004A3925 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				0447A8F0172932C100789461 /* Core */,
 				048A0205172892A1004A3925 /* LAppDelegate.h */,
 				048A0206172892A1004A3925 /* LAppDelegate.m */,
 				048A020E172892A2004A3925 /* MainStoryboard.storyboard */,
@@ -109,6 +127,13 @@
 				048A020C172892A2004A3925 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04BBFAE517292C3F004AF8AB /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = OpenCV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +206,7 @@
 				048A0203172892A0004A3925 /* main.m in Sources */,
 				048A0207172892A1004A3925 /* LAppDelegate.m in Sources */,
 				048A0213172892A3004A3925 /* LViewController.m in Sources */,
+				0447A8F31729330000789461 /* UIImage+OpenCV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +285,10 @@
 		048A0217172892A3004A3925 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageEditor/ImageEditor-Prefix.pch";
 				INFOPLIST_FILE = "ImageEditor/ImageEditor-Info.plist";
@@ -270,6 +300,10 @@
 		048A0218172892A3004A3925 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageEditor/ImageEditor-Prefix.pch";
 				INFOPLIST_FILE = "ImageEditor/ImageEditor-Info.plist";
@@ -297,6 +331,7 @@
 				048A0218172892A3004A3925 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,6 +11,7 @@
 @interface LViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet UIView  *imageSelectionView;
 
 - (IBAction)takePicture;
 - (IBAction)selectImageFromPhotoLibrary;
