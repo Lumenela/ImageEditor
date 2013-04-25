@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "244"
-         endingLineNumber = "244"
+         startingLineNumber = "247"
+         endingLineNumber = "247"
          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "213"
-         endingLineNumber = "213"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-showImage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "223"
-         endingLineNumber = "223"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,12 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LPhotoFilter.mm"
-         timestampString = "388581237.515612"
+         timestampString = "388621703.940663"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
-         landmarkName = "-addDefaultConstant"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
+         landmarkName = "+addDefaultConstantToImage:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,12 +73,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LPhotoFilter.mm"
-         timestampString = "388581330.409759"
+         timestampString = "388621703.940663"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
-         landmarkName = "-addDefaultConstant"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "+addDefaultConstantToImage:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
+         startingLineNumber = "258"
+         endingLineNumber = "258"
          landmarkName = "-collectionView:numberOfItemsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388612726.083839"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-createFiltersArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
+         startingLineNumber = "164"
+         endingLineNumber = "164"
          landmarkName = "-save"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,12 +138,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "388611107.061552"
+         timestampString = "388620539.320311"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
          landmarkName = "-save"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "388620539.320311"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "352"
+         endingLineNumber = "352"
+         landmarkName = "-addConstantToImage"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "388620539.320311"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "359"
+         endingLineNumber = "359"
+         landmarkName = "-substractConstantFromImage"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LPhotoFilter.mm"
+         timestampString = "388621703.940663"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "+addDefaultConstantToImage:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

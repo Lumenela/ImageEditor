@@ -54,15 +54,21 @@
 - (void)createFiltersArray
 {
     NSMutableArray *filtersArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
     __block LViewController *blockSafeSelf = self;
-    void (^filterBlock)(void) = ^ {
+    void (^addFilterBlock)(void) = ^ {
         [blockSafeSelf addConstantToImage];
         [blockSafeSelf hideActivityIndicator];
     };
-    LFilter *filter = [[LFilter alloc] initWithName:@"Add" andBlock:filterBlock];
-    [filtersArray addObject:filter];
-    }
+    LFilter *addFilter = [[LFilter alloc] initWithName:@"Add" andBlock:addFilterBlock];
+    [filtersArray addObject:addFilter];
+
+    void (^substractFilterBlock)(void) = ^ {
+        [blockSafeSelf substractConstantFromImage];
+        [blockSafeSelf hideActivityIndicator];
+    };
+    LFilter *substractFilter = [[LFilter alloc] initWithName:@"Substract" andBlock:substractFilterBlock];
+    [filtersArray addObject:substractFilter];
+    
     _filtersArray = filtersArray;
 }
 
@@ -141,17 +147,17 @@
 
 #pragma mark - internal logic
 
+- (void)setImage:(UIImage *)image
+{
+    _image = image;
+    _imageView.image = _image;
+}
+
 - (void)enableUndo
 {
     if (_prevImage) {
         _undoButton.enabled = YES;
     }
-}
-
-- (void)setImage:(UIImage *)image forImageView:(UIImageView *)imageView
-{
-    imageView.image = image;
-    [imageView setNeedsDisplay];
 }
 
 - (void)save
@@ -169,7 +175,7 @@
 {
     _undoButton.enabled = NO;
     _image = _prevImage;
-    [self setImage:_image forImageView:_imageView];
+    [self showImage:_image];
 }
 
 - (IBAction)takePicture
@@ -210,9 +216,9 @@
 
 - (void)showImage:(UIImage *)image
 {
-    [_imageView setImage:image];
-    [_imageSelectionView setHidden:YES];
-    [_imageView setNeedsDisplay];
+     [_imageView setImage:image];
+     [_imageSelectionView setHidden:YES];
+    //[_imageView setNeedsDisplay];
 }
 
 #pragma mark - Image Picker Delegate
@@ -234,10 +240,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         }
         
         //UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
-        _image = imageToSave;
+        [self setImage:imageToSave];
         _photoFilter = [[LPhotoFilter alloc] initWithImage:_image];
-        
-        [self showImage:_image];
         [self configureEditingUI];
     }
     
@@ -248,21 +252,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*- (void)image:(UIImage *)image
-        finishedSavingWithError:(NSError *)error
-                    contextInfo:(void *)contextInfo
-{
-    if (error) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Save failed"
-                              message: @"Failed to save image"
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-    }
-}*/
 
 #pragma mark - UICollectionView Datasource
 
@@ -361,8 +350,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)addConstantToImage
 {
     _prevImage = [_image copy];
-    _image = [_photoFilter addDefaultConstant];
-    [self setImage:_image forImageView:_imageView];
+    [self setImage:[LPhotoFilter addDefaultConstantToImage:_image]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
+}
+
+- (void)substractConstantFromImage
+{
+    _prevImage = [_image copy];
+    [self setImage:[LPhotoFilter substractDefaultConstantFromImage:_image]];
     [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
 }
 
