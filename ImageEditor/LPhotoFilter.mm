@@ -56,7 +56,9 @@
     [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:0 W:1] forKey:@"inputAVector"];
     [colorMatrixFilter setValue:[CIVector vectorWithX:0.1 Y:0.1 Z:0.1 W:0] forKey:@"inputBiasVector"];
     CIImage *outputImage = [colorMatrixFilter outputImage];
-    return [UIImage imageWithCIImage:outputImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
+    return res;
     
 }
 - (UIImage *)addConstant:(int)constant
@@ -86,7 +88,9 @@
     [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:0 W:1] forKey:@"inputAVector"];
     [colorMatrixFilter setValue:[CIVector vectorWithX:-0.1 Y:-0.1 Z:-0.1 W:0] forKey:@"inputBiasVector"];
     CIImage *outputImage = [colorMatrixFilter outputImage];
-    return [UIImage imageWithCIImage:outputImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
+    return res;
 
 }
 
