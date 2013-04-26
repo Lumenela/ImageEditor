@@ -35,6 +35,11 @@
 		048A0210172892A3004A3925 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A020E172892A2004A3925 /* MainStoryboard.storyboard */; };
 		048A0213172892A3004A3925 /* LViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A0212172892A3004A3925 /* LViewController.m */; };
 		048A021A1728ABAB004A3925 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A02191728ABAB004A3925 /* MobileCoreServices.framework */; };
+		04CD9FD3172A74ED00F116EC /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD2172A74ED00F116EC /* FPPopoverController.m */; };
+		04CD9FD9172A752D00F116EC /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD6172A752D00F116EC /* FPPopoverView.m */; };
+		04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD8172A752D00F116EC /* FPTouchView.m */; };
+		04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FE0172A77CC00F116EC /* LSliderViewController.m */; };
+		04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,16 @@
 		048A0211172892A3004A3925 /* LViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LViewController.h; sourceTree = "<group>"; };
 		048A0212172892A3004A3925 /* LViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LViewController.m; sourceTree = "<group>"; };
 		048A02191728ABAB004A3925 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		04CD9FD1172A74ED00F116EC /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
+		04CD9FD2172A74ED00F116EC /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
+		04CD9FD5172A752D00F116EC /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverView.h; sourceTree = "<group>"; };
+		04CD9FD6172A752D00F116EC /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
+		04CD9FD7172A752D00F116EC /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
+		04CD9FD8172A752D00F116EC /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
+		04CD9FDC172A756F00F116EC /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
+		04CD9FDF172A77CC00F116EC /* LSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSliderViewController.h; sourceTree = "<group>"; };
+		04CD9FE0172A77CC00F116EC /* LSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSliderViewController.m; sourceTree = "<group>"; };
+		04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSliderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +143,7 @@
 			children = (
 				042913EB17299BC800153650 /* icons */,
 				0447A90D1729550C00789461 /* back_pattern.png */,
+				048A020E172892A2004A3925 /* MainStoryboard.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -169,12 +185,12 @@
 		048A01FC1728929F004A3925 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				04CD9FDB172A754E00F116EC /* Helpers */,
+				04CD9FD4172A74F900F116EC /* Views */,
+				04CD9FCF172A748100F116EC /* ViewControllers */,
 				0447A8F0172932C100789461 /* Core */,
 				048A0205172892A1004A3925 /* LAppDelegate.h */,
 				048A0206172892A1004A3925 /* LAppDelegate.m */,
-				048A020E172892A2004A3925 /* MainStoryboard.storyboard */,
-				048A0211172892A3004A3925 /* LViewController.h */,
-				048A0212172892A3004A3925 /* LViewController.m */,
 				048A01FD172892A0004A3925 /* Supporting Files */,
 			);
 			path = ImageEditor;
@@ -192,6 +208,39 @@
 				048A020C172892A2004A3925 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04CD9FCF172A748100F116EC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04CD9FD1172A74ED00F116EC /* FPPopoverController.h */,
+				04CD9FD2172A74ED00F116EC /* FPPopoverController.m */,
+				048A0211172892A3004A3925 /* LViewController.h */,
+				048A0212172892A3004A3925 /* LViewController.m */,
+				04CD9FDF172A77CC00F116EC /* LSliderViewController.h */,
+				04CD9FE0172A77CC00F116EC /* LSliderViewController.m */,
+				04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		04CD9FD4172A74F900F116EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04CD9FD5172A752D00F116EC /* FPPopoverView.h */,
+				04CD9FD6172A752D00F116EC /* FPPopoverView.m */,
+				04CD9FD7172A752D00F116EC /* FPTouchView.h */,
+				04CD9FD8172A752D00F116EC /* FPTouchView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		04CD9FDB172A754E00F116EC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04CD9FDC172A756F00F116EC /* ARCMacros.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +308,7 @@
 				042913F517299BDA00153650 /* undo.png in Resources */,
 				042913F71729A39300153650 /* contrast.png in Resources */,
 				042913FB1729BB2400153650 /* sample.png in Resources */,
+				04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +325,10 @@
 				0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */,
 				0447A90217293A1900789461 /* UIImage+OpenCV.mm in Sources */,
 				042913E91729833300153650 /* LFilter.m in Sources */,
+				04CD9FD3172A74ED00F116EC /* FPPopoverController.m in Sources */,
+				04CD9FD9172A752D00F116EC /* FPPopoverView.m in Sources */,
+				04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */,
+				04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +349,7 @@
 				048A020F172892A3004A3925 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = ImageEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

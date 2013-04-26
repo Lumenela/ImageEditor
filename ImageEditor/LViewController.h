@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FPPopoverController.h"
 
 @interface LViewController : UIViewController<UIImagePickerControllerDelegate,
                                                 UINavigationControllerDelegate,
                                                 UICollectionViewDataSource,
                                                 UICollectionViewDelegateFlowLayout,
-                                                UIAlertViewDelegate>
+                                                UIAlertViewDelegate,
+                                                FPPopoverControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIView *imageSelectionView;
@@ -29,5 +31,6 @@
 - (IBAction)selectImageFromPhotoLibrary;
 
 - (IBAction)undo:(id)sender;
+- (IBAction)configure:(id)sender;
 
 @end

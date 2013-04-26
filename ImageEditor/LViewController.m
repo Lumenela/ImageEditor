@@ -11,6 +11,8 @@
 #import "LFilter.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
+#import "LSliderViewController.h"
+#import "FPPopoverController.h"
 
 #define kBorderWidth 3.0
 #define kCornerRadius 8.0
@@ -178,6 +180,17 @@
     [self showImage:_image];
 }
 
+- (IBAction)configure:(id)sender
+{
+    LSliderViewController *sliderViewController;// = [[LSliderViewController alloc] init];
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LSliderViewController" owner:self options:nil];
+    sliderViewController = nib[0];
+    FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:sliderViewController
+                                                                              delegate:self];
+    [popover presentPopoverFromView:(UIView *)sender];
+    
+}
+
 - (IBAction)takePicture
 {
     [self startCameraControllerFromViewController:self usingDelegate:self];
@@ -296,8 +309,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_image) {
+        LFilter *filter = ((LFilter *) _filtersArray[indexPath.row]);
+        if ([filter.filterName isEqualToString:@"Add"]) {
+            _configureButton.enabled = YES;
+        } else {
+            _configureButton.enabled = NO;
+        }
         [self showActivityIndicator];
-        void (^filterBlock)(void) = ((LFilter *) _filtersArray[indexPath.row]).filterBlock;
+        void (^filterBlock)(void) = filter.filterBlock;
         filterBlock();
     }
 }
@@ -359,6 +378,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     _prevImage = [_image copy];
     [self setImage:[LPhotoFilter substractDefaultConstantFromImage:_image]];
     [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
+}
+
+#pragma mark - Popover Delegate
+
+- (void)presentedNewPopoverController:(FPPopoverController *)newPopoverController
+          shouldDismissVisiblePopover:(FPPopoverController*)visiblePopoverController
+{
+    [visiblePopoverController dismissPopoverAnimated:YES];
+}
+
+- (void)popoverControllerDidDismissPopover:(FPPopoverController *)popoverController
+{
+    
 }
 
 @end

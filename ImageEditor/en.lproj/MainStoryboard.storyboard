@@ -25,11 +25,10 @@
                                             <constraint firstAttribute="height" constant="268" id="f8R-8a-P2g"/>
                                         </constraints>
                                     </imageView>
-                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G60-Mn-GHw">
+                                    <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="G60-Mn-GHw">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-mp-MYR">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="3g9-mp-yWD"/>
                                                     <constraint firstAttribute="width" constant="73" id="Rf4-v0-Qnt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -44,18 +43,10 @@
                                                     <action selector="selectImageFromPhotoLibrary" destination="2" eventType="touchUpInside" id="uy4-n4-yfm"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SELECT IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-jK-wne">
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="87" id="JZo-yU-TAB"/>
-                                                    <constraint firstAttribute="width" constant="248" id="Zhg-tC-nN3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-yh-Zsg">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="73" id="LvI-7f-6Nw"/>
+                                                    <constraint firstAttribute="height" constant="60" id="jqo-iQ-jee"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" backgroundImage="camera.png">
@@ -72,20 +63,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.28000000000000003" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="tsf-mp-MYR" secondAttribute="trailing" constant="40" id="5uT-Nz-4IE"/>
-                                            <constraint firstAttribute="bottom" secondItem="tsf-mp-MYR" secondAttribute="bottom" constant="39" id="OZQ-lp-wfJ"/>
-                                            <constraint firstItem="8aP-jK-wne" firstAttribute="top" secondItem="G60-Mn-GHw" secondAttribute="top" constant="58" id="Xp4-6P-xh6"/>
-                                            <constraint firstItem="8aP-jK-wne" firstAttribute="centerX" secondItem="G60-Mn-GHw" secondAttribute="centerX" type="default" id="mhc-qz-CJy"/>
-                                            <constraint firstAttribute="bottom" secondItem="dBB-yh-Zsg" secondAttribute="bottom" constant="42" id="mzK-OS-Rqi"/>
-                                            <constraint firstItem="dBB-yh-Zsg" firstAttribute="leading" secondItem="G60-Mn-GHw" secondAttribute="leading" constant="27" id="ryG-d1-P6h"/>
+                                            <constraint firstItem="tsf-mp-MYR" firstAttribute="bottom" secondItem="dBB-yh-Zsg" secondAttribute="bottom" type="default" id="NO6-Rw-3pE"/>
+                                            <constraint firstItem="dBB-yh-Zsg" firstAttribute="leading" secondItem="G60-Mn-GHw" secondAttribute="leading" constant="41" id="R3f-Vm-iCI"/>
+                                            <constraint firstItem="dBB-yh-Zsg" firstAttribute="top" secondItem="G60-Mn-GHw" secondAttribute="top" constant="102" id="XJu-Sz-jye"/>
+                                            <constraint firstAttribute="trailing" secondItem="tsf-mp-MYR" secondAttribute="trailing" constant="44" id="ZiG-f8-kuO"/>
+                                            <constraint firstItem="tsf-mp-MYR" firstAttribute="top" secondItem="dBB-yh-Zsg" secondAttribute="top" type="default" id="eIW-Ta-4UW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="G60-Mn-GHw" secondAttribute="bottom" constant="-3" id="60D-pr-0Is"/>
                                     <constraint firstItem="G60-Mn-GHw" firstAttribute="trailing" secondItem="Ftk-wb-Xld" secondAttribute="trailing" type="default" id="aMg-hY-5NZ"/>
                                     <constraint firstItem="G60-Mn-GHw" firstAttribute="leading" secondItem="Ftk-wb-Xld" secondAttribute="leading" type="default" id="cQo-ce-Kq7"/>
-                                    <constraint firstAttribute="bottom" secondItem="G60-Mn-GHw" secondAttribute="bottom" constant="-18" id="j5i-82-Pnz"/>
                                     <constraint firstItem="4Lz-1v-M4j" firstAttribute="trailing" secondItem="Ftk-wb-Xld" secondAttribute="trailing" type="default" id="qnN-EY-ZkO"/>
                                     <constraint firstItem="4Lz-1v-M4j" firstAttribute="leading" secondItem="Ftk-wb-Xld" secondAttribute="leading" type="default" id="sbG-Pc-9DN"/>
                                     <constraint firstItem="4Lz-1v-M4j" firstAttribute="bottom" secondItem="Ftk-wb-Xld" secondAttribute="bottom" type="default" id="vqd-Xq-usU"/>
@@ -152,6 +142,9 @@
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="configure:" destination="2" eventType="touchUpInside" id="LkL-YR-PlB"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="Tg0-0i-iI1">
@@ -229,6 +222,37 @@
         <image name="gallery.png" width="45" height="43"/>
         <image name="undo.png" width="39" height="34"/>
     </resources>
+    <classes>
+        <class className="LViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="configure:"/>
+                <relationship kind="action" name="selectImageFromPhotoLibrary"/>
+                <relationship kind="action" name="takePicture"/>
+                <relationship kind="action" name="undo:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="autoContrastButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="configureButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagePlaceholder" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageSelectionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="undoButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
