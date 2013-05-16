@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIImagePickerController *cameraRollUI;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *prevImage;
+@property (nonatomic, strong) UIImage *normalImage;
 @property (nonatomic, strong) LPhotoFilter *photoFilter;
 @property (nonatomic, strong) NSArray *filtersArray;
 @property (nonatomic, strong) UIAlertView *alert;
@@ -57,6 +58,13 @@
 {
     NSMutableArray *filtersArray = [[NSMutableArray alloc] init];
     __block LViewController *blockSafeSelf = self;
+    void (^normalFilterBlock)(void) = ^ {
+        [blockSafeSelf initialImage];
+        [blockSafeSelf hideActivityIndicator];
+    };
+    LFilter *normalFilter = [[LFilter alloc] initWithName:@"Normal" andBlock:normalFilterBlock];
+    [filtersArray addObject:normalFilter];
+
     void (^addFilterBlock)(void) = ^ {
         [blockSafeSelf addConstantToImage];
         [blockSafeSelf hideActivityIndicator];
@@ -70,6 +78,13 @@
     };
     LFilter *substractFilter = [[LFilter alloc] initWithName:@"Substract" andBlock:substractFilterBlock];
     [filtersArray addObject:substractFilter];
+
+    void (^negativeFilterBlock)(void) = ^ {
+        [blockSafeSelf negativeImage];
+        [blockSafeSelf hideActivityIndicator];
+    };
+    LFilter *negativeFilter = [[LFilter alloc] initWithName:@"Negative" andBlock:negativeFilterBlock];
+    [filtersArray addObject:negativeFilter];
     
     _filtersArray = filtersArray;
 }
@@ -187,6 +202,7 @@
     sliderViewController = nib[0];
     FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:sliderViewController
                                                                               delegate:self];
+    popover.contentSize = CGSizeMake(200,150);
     [popover presentPopoverFromView:(UIView *)sender];
     
 }
@@ -254,6 +270,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         
         //UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
         [self setImage:imageToSave];
+        _normalImage = imageToSave;
         _photoFilter = [[LPhotoFilter alloc] initWithImage:_image];
         [self configureEditingUI];
     }
@@ -365,6 +382,20 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 #pragma mark - Filters
+
+- (void)initialImage
+{
+    _prevImage = [_image copy];
+    [self setImage:_normalImage];
+    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
+}
+
+- (void)negativeImage
+{
+    _prevImage = [_image copy];
+    [self setImage:[LPhotoFilter negative:_image]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
+}
 
 - (void)addConstantToImage
 {

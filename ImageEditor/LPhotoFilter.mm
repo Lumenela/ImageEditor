@@ -9,6 +9,7 @@
 #import "LPhotoFilter.h"
 #import "UIImage+OpenCV.h"
 
+
 @interface LPhotoFilter()
 
 @property (nonatomic, strong) UIImage *image;
@@ -64,6 +65,15 @@
 - (UIImage *)addConstant:(int)constant
 {
     return nil;
+}
+
++ (UIImage *)negative:(UIImage *)image
+{
+    cv::Mat mat = image.CVMat;
+    cv::Mat res = image.CVMat;
+    cvNot(&mat, &res);
+    res = ::cvGetMat((cv::Mat*)&res, nil);
+    return [[UIImage alloc] initWithCVMat: res]; 
 }
 
 + (UIImage *)substractDefaultConstantFromImage:(UIImage *)source

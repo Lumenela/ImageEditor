@@ -15,4 +15,5 @@
 
 + (UIImage *)substractDefaultConstantFromImage:(UIImage *)source;
 + (UIImage *)addDefaultConstantToImage:(UIImage *)source;
++ (UIImage *)negative:(UIImage *)image;
 @end
