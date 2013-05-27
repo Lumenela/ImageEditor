@@ -7,12 +7,13 @@
 //
 
 #import "LAppDelegate.h"
+#import "LPhotoFilter.h"
 
 @implementation LAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    _filterEngine = [[LPhotoFilter alloc] init];
     return YES;
 }
 							

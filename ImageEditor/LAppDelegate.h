@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LFilterEngine.h"
+
+#define ApplicationDelegate ((LAppDelegate *)[UIApplication sharedApplication].delegate)
+#define ImageFilterAppliedNotificationName @"ImageFilterApplied"
 
 @interface LAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) id<LFilterEngine> filterEngine;
 
 @end

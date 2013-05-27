@@ -11,8 +11,9 @@
 @interface LFilter : NSObject
 
 @property (nonatomic, strong) NSString *filterName;
-@property (nonatomic, copy) void (^filterBlock)(void);
+@property (nonatomic, copy) UIImage * (^filterBlock)(UIImage *);
 
-- (id)initWithName:(NSString *)filterName andBlock:(void (^)(void))filterBlock;
+- (id)initWithName:(NSString *)filterName andBlock:(UIImage * (^)(UIImage *))filterBlock;
+- (UIImage *)filterImage:(UIImage *)image;
 
 @end

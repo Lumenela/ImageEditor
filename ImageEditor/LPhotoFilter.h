@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LFilterEngine.h"
 
-@interface LPhotoFilter : NSObject
+@interface LPhotoFilter : NSObject<LFilterEngine>
 
-- (id)initWithImage:(UIImage *)image;
-- (UIImage *)addConstant:(int)constant;
-
-+ (UIImage *)substractDefaultConstantFromImage:(UIImage *)source;
-+ (UIImage *)addDefaultConstantToImage:(UIImage *)source;
-+ (UIImage *)negative:(UIImage *)image;
 @end

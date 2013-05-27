@@ -10,7 +10,7 @@
 
 @implementation LFilter
 
-- (id)initWithName:(NSString *)filterName andBlock:(void (^)(void))filterBlock
+- (id)initWithName:(NSString *)filterName andBlock:(UIImage * (^)(UIImage *))filterBlock
 {
     self = [super init];
     if (self) {
@@ -19,6 +19,10 @@
         return self;
     }
     return nil;
+}
+- (UIImage *)filterImage:(UIImage *)image
+{
+    return _filterBlock(image);
 }
 
 @end

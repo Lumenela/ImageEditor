@@ -14,15 +14,10 @@
 		042913F417299BDA00153650 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913EF17299BDA00153650 /* gallery.png */; };
 		042913F517299BDA00153650 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F017299BDA00153650 /* undo.png */; };
 		042913F71729A39300153650 /* contrast.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F61729A39300153650 /* contrast.png */; };
-		042913F91729ACD700153650 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042913F81729ACD700153650 /* QuartzCore.framework */; };
 		042913FB1729BB2400153650 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913FA1729BB2400153650 /* sample.png */; };
-		0447A8EA17292FBF00789461 /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A8E917292FBF00789461 /* OpenCV.framework */; };
 		0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A8F5172934A500789461 /* LPhotoFilter.mm */; };
 		0447A90217293A1900789461 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A90117293A1900789461 /* UIImage+OpenCV.mm */; };
-		0447A90417293B1500789461 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */; };
-		0447A90517293B1C00789461 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A8F7172937FE00789461 /* libz.dylib */; };
 		0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A90A17293F7C00789461 /* CoreImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		0447A90E1729550C00789461 /* back_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 0447A90D1729550C00789461 /* back_pattern.png */; };
 		048A01F71728929F004A3925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F61728929F004A3925 /* UIKit.framework */; };
 		048A01F91728929F004A3925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F81728929F004A3925 /* Foundation.framework */; };
 		048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01FA1728929F004A3925 /* CoreGraphics.framework */; };
@@ -40,6 +35,11 @@
 		04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD8172A752D00F116EC /* FPTouchView.m */; };
 		04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FE0172A77CC00F116EC /* LSliderViewController.m */; };
 		04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */; };
+		A169809817450CC000921F82 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A169809717450CC000921F82 /* opencv2.framework */; };
+		A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */; };
+		A1E4C2F617536FEA00B050B4 /* LComplexFilterBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F517536FEA00B050B4 /* LComplexFilterBase.cpp */; };
+		A1E4C2F91753710A00B050B4 /* LComplexFilterFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F81753710A00B050B4 /* LComplexFilterFacade.mm */; };
+		A1E4C300175377A000B050B4 /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2FE175377A000B050B4 /* cvneon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +51,7 @@
 		042913EF17299BDA00153650 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery.png; path = ImageEditor/icons/gallery.png; sourceTree = "<group>"; };
 		042913F017299BDA00153650 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = undo.png; path = ImageEditor/icons/undo.png; sourceTree = "<group>"; };
 		042913F61729A39300153650 /* contrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contrast.png; path = ImageEditor/icons/contrast.png; sourceTree = "<group>"; };
-		042913F81729ACD700153650 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		042913FA1729BB2400153650 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ImageEditor/icons/sample.png; sourceTree = "<group>"; };
-		0447A8E917292FBF00789461 /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenCV.framework; sourceTree = "<group>"; };
 		0447A8F4172934A500789461 /* LPhotoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPhotoFilter.h; sourceTree = "<group>"; };
 		0447A8F5172934A500789461 /* LPhotoFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LPhotoFilter.mm; sourceTree = "<group>"; };
 		0447A8F7172937FE00789461 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -61,7 +59,6 @@
 		0447A90117293A1900789461 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		0447A90A17293F7C00789461 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		0447A90D1729550C00789461 /* back_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_pattern.png; path = "../subtlepatterns-SubtlePatterns-a8202d6/back_pattern.png"; sourceTree = "<group>"; };
 		048A01F21728929F004A3925 /* ImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A01F61728929F004A3925 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		048A01F81728929F004A3925 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +86,16 @@
 		04CD9FDF172A77CC00F116EC /* LSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSliderViewController.h; sourceTree = "<group>"; };
 		04CD9FE0172A77CC00F116EC /* LSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSliderViewController.m; sourceTree = "<group>"; };
 		04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSliderViewController.xib; sourceTree = "<group>"; };
+		A169809717450CC000921F82 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../opencv/opencv2.framework; sourceTree = "<group>"; };
+		A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFilterEngine.h; sourceTree = "<group>"; };
+		A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFilterFactory.h; sourceTree = "<group>"; };
+		A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFilterFactory.m; sourceTree = "<group>"; };
+		A1E4C2F417536FEA00B050B4 /* LComplexFilterBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LComplexFilterBase.h; sourceTree = "<group>"; };
+		A1E4C2F517536FEA00B050B4 /* LComplexFilterBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LComplexFilterBase.cpp; sourceTree = "<group>"; };
+		A1E4C2F71753710A00B050B4 /* LComplexFilterFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LComplexFilterFacade.h; sourceTree = "<group>"; };
+		A1E4C2F81753710A00B050B4 /* LComplexFilterFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LComplexFilterFacade.mm; sourceTree = "<group>"; };
+		A1E4C2FE175377A000B050B4 /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
+		A1E4C2FF175377A000B050B4 /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,15 +103,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042913F91729ACD700153650 /* QuartzCore.framework in Frameworks */,
+				A169809817450CC000921F82 /* opencv2.framework in Frameworks */,
 				0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */,
-				0447A90517293B1C00789461 /* libz.dylib in Frameworks */,
-				0447A90417293B1500789461 /* libstdc++.6.0.9.dylib in Frameworks */,
 				048A021A1728ABAB004A3925 /* MobileCoreServices.framework in Frameworks */,
 				048A01F71728929F004A3925 /* UIKit.framework in Frameworks */,
 				048A01F91728929F004A3925 /* Foundation.framework in Frameworks */,
 				048A01FB1728929F004A3925 /* CoreGraphics.framework in Frameworks */,
-				0447A8EA17292FBF00789461 /* OpenCV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +132,9 @@
 		0447A8F0172932C100789461 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0447A90017293A1900789461 /* UIImage+OpenCV.h */,
-				0447A90117293A1900789461 /* UIImage+OpenCV.mm */,
-				0447A8F4172934A500789461 /* LPhotoFilter.h */,
-				0447A8F5172934A500789461 /* LPhotoFilter.mm */,
-				042913E71729833300153650 /* LFilter.h */,
-				042913E81729833300153650 /* LFilter.m */,
+				A1E4C2F317536D3800B050B4 /* Utilities */,
+				A1E4C2F217536C9000B050B4 /* Filters */,
+				A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -142,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				042913EB17299BC800153650 /* icons */,
-				0447A90D1729550C00789461 /* back_pattern.png */,
 				048A020E172892A2004A3925 /* MainStoryboard.storyboard */,
 			);
 			name = Resources;
@@ -151,9 +151,7 @@
 		048A01E71728929E004A3925 = {
 			isa = PBXGroup;
 			children = (
-				042913F81729ACD700153650 /* QuartzCore.framework */,
 				0447A90C172954E800789461 /* Resources */,
-				0447A90A17293F7C00789461 /* CoreImage.framework */,
 				048A01FC1728929F004A3925 /* ImageEditor */,
 				048A01F51728929F004A3925 /* Frameworks */,
 				048A01F31728929F004A3925 /* Products */,
@@ -171,10 +169,11 @@
 		048A01F51728929F004A3925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A169809717450CC000921F82 /* opencv2.framework */,
+				0447A90A17293F7C00789461 /* CoreImage.framework */,
 				0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */,
 				0447A8F7172937FE00789461 /* libz.dylib */,
 				048A02191728ABAB004A3925 /* MobileCoreServices.framework */,
-				0447A8E917292FBF00789461 /* OpenCV.framework */,
 				048A01F61728929F004A3925 /* UIKit.framework */,
 				048A01F81728929F004A3925 /* Foundation.framework */,
 				048A01FA1728929F004A3925 /* CoreGraphics.framework */,
@@ -243,6 +242,42 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		A1E4C2F217536C9000B050B4 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */,
+				A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */,
+				0447A8F4172934A500789461 /* LPhotoFilter.h */,
+				0447A8F5172934A500789461 /* LPhotoFilter.mm */,
+				042913E71729833300153650 /* LFilter.h */,
+				042913E81729833300153650 /* LFilter.m */,
+				A1E4C2F417536FEA00B050B4 /* LComplexFilterBase.h */,
+				A1E4C2F517536FEA00B050B4 /* LComplexFilterBase.cpp */,
+				A1E4C2F71753710A00B050B4 /* LComplexFilterFacade.h */,
+				A1E4C2F81753710A00B050B4 /* LComplexFilterFacade.mm */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
+		A1E4C2F317536D3800B050B4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A1E4C2FA175373A700B050B4 /* Neon */,
+				0447A90017293A1900789461 /* UIImage+OpenCV.h */,
+				0447A90117293A1900789461 /* UIImage+OpenCV.mm */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		A1E4C2FA175373A700B050B4 /* Neon */ = {
+			isa = PBXGroup;
+			children = (
+				A1E4C2FE175377A000B050B4 /* cvneon.cpp */,
+				A1E4C2FF175377A000B050B4 /* cvneon.h */,
+			);
+			name = Neon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,7 +335,6 @@
 				048A020B172892A2004A3925 /* Default@2x.png in Resources */,
 				048A020D172892A2004A3925 /* Default-568h@2x.png in Resources */,
 				048A0210172892A3004A3925 /* MainStoryboard.storyboard in Resources */,
-				0447A90E1729550C00789461 /* back_pattern.png in Resources */,
 				042913F117299BDA00153650 /* add.png in Resources */,
 				042913F217299BDA00153650 /* camera.png in Resources */,
 				042913F317299BDA00153650 /* configure.png in Resources */,
@@ -329,6 +363,10 @@
 				04CD9FD9172A752D00F116EC /* FPPopoverView.m in Sources */,
 				04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */,
 				04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */,
+				A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */,
+				A1E4C2F617536FEA00B050B4 /* LComplexFilterBase.cpp in Sources */,
+				A1E4C2F91753710A00B050B4 /* LComplexFilterFacade.mm in Sources */,
+				A1E4C300175377A000B050B4 /* cvneon.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +449,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../opencv\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageEditor/ImageEditor-Prefix.pch";
@@ -426,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../opencv\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageEditor/ImageEditor-Prefix.pch";

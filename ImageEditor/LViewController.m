@@ -8,11 +8,13 @@
 
 #import "LViewController.h"
 #import "LPhotoFilter.h"
+#import "LFilterFactory.h"
 #import "LFilter.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
 #import "LSliderViewController.h"
 #import "FPPopoverController.h"
+#import "LAppDelegate.h"
 
 #define kBorderWidth 3.0
 #define kCornerRadius 8.0
@@ -25,11 +27,9 @@
 @property (nonatomic, strong) UIImage *prevImage;
 @property (nonatomic, strong) UIImage *normalImage;
 @property (nonatomic, strong) LPhotoFilter *photoFilter;
-@property (nonatomic, strong) NSArray *filtersArray;
+@property (nonatomic, strong) NSArray *filterNamesArray;
 @property (nonatomic, strong) UIAlertView *alert;
 
-//events
-@property (nonatomic, strong, readonly) NSString *ImageFilterAppliedNotificationName;
 @end
 
 
@@ -45,8 +45,7 @@
     [self configureInitialUI];
     [self configureAlertView];
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"FilterCell"];
-    _ImageFilterAppliedNotificationName = @"ImageFilterApplied";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableUndo) name:_ImageFilterAppliedNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableUndo) name:ImageFilterAppliedNotificationName object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,38 +55,11 @@
 
 - (void)createFiltersArray
 {
-    NSMutableArray *filtersArray = [[NSMutableArray alloc] init];
-    __block LViewController *blockSafeSelf = self;
-    void (^normalFilterBlock)(void) = ^ {
-        [blockSafeSelf initialImage];
-        [blockSafeSelf hideActivityIndicator];
-    };
-    LFilter *normalFilter = [[LFilter alloc] initWithName:@"Normal" andBlock:normalFilterBlock];
-    [filtersArray addObject:normalFilter];
-
-    void (^addFilterBlock)(void) = ^ {
-        [blockSafeSelf addConstantToImage];
-        [blockSafeSelf hideActivityIndicator];
-    };
-    LFilter *addFilter = [[LFilter alloc] initWithName:@"Add" andBlock:addFilterBlock];
-    [filtersArray addObject:addFilter];
-
-    void (^substractFilterBlock)(void) = ^ {
-        [blockSafeSelf substractConstantFromImage];
-        [blockSafeSelf hideActivityIndicator];
-    };
-    LFilter *substractFilter = [[LFilter alloc] initWithName:@"Substract" andBlock:substractFilterBlock];
-    [filtersArray addObject:substractFilter];
-
-    void (^negativeFilterBlock)(void) = ^ {
-        [blockSafeSelf negativeImage];
-        [blockSafeSelf hideActivityIndicator];
-    };
-    LFilter *negativeFilter = [[LFilter alloc] initWithName:@"Negative" andBlock:negativeFilterBlock];
-    [filtersArray addObject:negativeFilter];
-    
-    _filtersArray = filtersArray;
-}
+    _filterNamesArray = @[NORMAL_FILTERNAME,
+                         ADD_WHITE_FILTERNAME,
+                         SUBTRACT_WHITE_FILTERNAME,
+                         NEGATIVE_FILTERNAME];
+    }
 
 - (void)configureImagePlaceholder
 {
@@ -286,7 +258,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 #pragma mark - UICollectionView Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return [_filtersArray count];
+    return [_filterNamesArray count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -311,7 +283,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [cell.layer setShadowRadius:3.0];
     [cell.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     
-    NSString *filterName = ((LFilter *) _filtersArray[indexPath.row]).filterName;
+    NSString *filterName = _filterNamesArray[indexPath.row];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(3, 70, 85, 20)];
     label.backgroundColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.7];
     label.text = filterName;
@@ -326,15 +298,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_image) {
-        LFilter *filter = ((LFilter *) _filtersArray[indexPath.row]);
-        if ([filter.filterName isEqualToString:@"Add"]) {
-            _configureButton.enabled = YES;
+        _prevImage = [_image copy];
+        NSString *filterName = _filterNamesArray[indexPath.row];
+        if (![filterName isEqualToString:NORMAL_FILTERNAME]) {
+            LFilter *filter = [LFilterFactory filterByName:filterName];
+            [self setImage:[filter filterImage:_image]];
         } else {
-            _configureButton.enabled = NO;
+            _image = [_normalImage copy];
+            [self setImage:_image];
         }
-        [self showActivityIndicator];
-        void (^filterBlock)(void) = filter.filterBlock;
-        filterBlock();
+        
     }
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -379,36 +352,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 
-}
-
-#pragma mark - Filters
-
-- (void)initialImage
-{
-    _prevImage = [_image copy];
-    [self setImage:_normalImage];
-    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
-}
-
-- (void)negativeImage
-{
-    _prevImage = [_image copy];
-    [self setImage:[LPhotoFilter negative:_image]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
-}
-
-- (void)addConstantToImage
-{
-    _prevImage = [_image copy];
-    [self setImage:[LPhotoFilter addDefaultConstantToImage:_image]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
-}
-
-- (void)substractConstantFromImage
-{
-    _prevImage = [_image copy];
-    [self setImage:[LPhotoFilter substractDefaultConstantFromImage:_image]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:_ImageFilterAppliedNotificationName object:nil];
 }
 
 #pragma mark - Popover Delegate

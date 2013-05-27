@@ -31,11 +31,14 @@
     return nil;
 }
 
-+ (UIImage *)addDefaultConstantToImage:(UIImage *)source
+- (void)setImage:(UIImage *)image
 {
-    //TODO: use EAGL context for drawing
-    //EAGLContext *myEAGLContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    //    CIContext *context = [CIContext contextWithEAGLContext:myEAGLContext];
+    _image = image;
+    _matrix = [_image CVMat];
+}
+
+- (UIImage *)addWhiteToImage:(UIImage *)source
+{
     CIImage *ci = source.CIImage;
     CGImage *cg = source.CGImage;
     CIImage *image;
@@ -47,7 +50,7 @@
     if (!image) {
         return nil;
     }
-    
+
     CIFilter *colorMatrixFilter = [CIFilter filterWithName:@"CIColorMatrix"];
     [colorMatrixFilter setDefaults];
     [colorMatrixFilter setValue:image forKey:kCIInputImageKey];
@@ -60,23 +63,9 @@
     CIContext *context = [CIContext contextWithOptions:nil];
     UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
     return res;
-    
-}
-- (UIImage *)addConstant:(int)constant
-{
-    return nil;
 }
 
-+ (UIImage *)negative:(UIImage *)image
-{
-    cv::Mat mat = image.CVMat;
-    cv::Mat res = image.CVMat;
-    cvNot(&mat, &res);
-    res = ::cvGetMat((cv::Mat*)&res, nil);
-    return [[UIImage alloc] initWithCVMat: res]; 
-}
-
-+ (UIImage *)substractDefaultConstantFromImage:(UIImage *)source
+- (UIImage *)subtractWhiteFromImage:(UIImage *)source
 {
     CIImage *ci = source.CIImage;
     CGImage *cg = source.CGImage;
@@ -101,12 +90,26 @@
     CIContext *context = [CIContext contextWithOptions:nil];
     UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
     return res;
-
 }
 
-- (UIImage *)substractConstant:(int)constant
+- (UIImage *)negativeFromImage:(UIImage *)image
 {
-    return nil;
+    cv::Mat mat = image.CVMat;
+    cv::Mat res = image.CVMat;
+    cvNot(&mat, &res);
+    res = ::cvGetMat((cv::Mat*)&res, nil);
+    return [[UIImage alloc] initWithCVMat: res];
+}
+
+
+- (UIImage *)addWhiteColorWithCoefficient:(int)coefficient toImage:(UIImage *)image
+{
+    return image;
+}
+
+- (UIImage *)addImage:(UIImage *)image toImage:(UIImage *)otherImage
+{
+    return image;
 }
 
 @end
