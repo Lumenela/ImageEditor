@@ -7,13 +7,10 @@
 //
 
 #import "LPhotoFilter.h"
-#import "UIImage+OpenCV.h"
-
 
 @interface LPhotoFilter()
 
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic) cv::Mat matrix;
 
 @end
 
@@ -25,7 +22,6 @@
     self = [super init];
     if (self) {
         _image = image;
-        _matrix = [_image CVMat];
         return self;
     }
     return nil;
@@ -34,7 +30,6 @@
 - (void)setImage:(UIImage *)image
 {
     _image = image;
-    _matrix = [_image CVMat];
 }
 
 - (UIImage *)addWhiteToImage:(UIImage *)source
@@ -50,7 +45,7 @@
     if (!image) {
         return nil;
     }
-
+    
     CIFilter *colorMatrixFilter = [CIFilter filterWithName:@"CIColorMatrix"];
     [colorMatrixFilter setDefaults];
     [colorMatrixFilter setValue:image forKey:kCIInputImageKey];
@@ -92,15 +87,32 @@
     return res;
 }
 
-- (UIImage *)negativeFromImage:(UIImage *)image
+- (UIImage *)negativeFromImage:(UIImage *)source
 {
-    cv::Mat mat = image.CVMat;
-    cv::Mat res = image.CVMat;
-    cvNot(&mat, &res);
-    res = ::cvGetMat((cv::Mat*)&res, nil);
-    return [[UIImage alloc] initWithCVMat: res];
+    CIImage *ci = source.CIImage;
+    CGImage *cg = source.CGImage;
+    CIImage *image;
+    if (cg) {
+        image = [[CIImage alloc] initWithCGImage:cg];
+    } else if (ci) {
+        image = ci;
+    }
+    if (!image) {
+        return nil;
+    }
+    CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
+    [filter setDefaults];
+    [filter setValue:image forKey:kCIInputImageKey];
+    CIImage* outputImage = [filter valueForKey:kCIOutputImageKey];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
+    return res;
 }
 
+- (UIImage *)detectEdgesOnImage:(UIImage *)image
+{
+    return image;
+}
 
 - (UIImage *)addWhiteColorWithCoefficient:(int)coefficient toImage:(UIImage *)image
 {

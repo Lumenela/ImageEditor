@@ -23,6 +23,9 @@
     if ([filterName isEqualToString:NEGATIVE_FILTERNAME]) {
         return [LFilterFactory negativeFromImage];
     }
+    if ([filterName isEqualToString:EDGE_DETECTION_FILTERNAME]) {
+        return [LFilterFactory detectEdgesOnImage];
+    }
     return [LFilterFactory defaultFilter];
 }
 
@@ -72,6 +75,20 @@
     };
 
     LFilter *filter = [[LFilter alloc] initWithName:ADD_WHITE_FILTERNAME andBlock:filterBlock];
+    return filter;
+}
+
++ (LFilter *)detectEdgesOnImage
+{
+    id<LFilterEngine> filterEngine = [ApplicationDelegate filterEngine];
+    UIImage * (^filterBlock)(UIImage *image) = ^UIImage *(UIImage *image) {
+        [filterEngine setImage:image];
+        UIImage *res = [filterEngine detectEdgesOnImage:image];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ImageFilterAppliedNotificationName object:nil];
+        return res;
+    };
+
+    LFilter *filter = [[LFilter alloc] initWithName:EDGE_DETECTION_FILTERNAME andBlock:filterBlock];
     return filter;
 }
 

@@ -69,7 +69,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LFilterFactory.m"
@@ -80,6 +80,17 @@
          endingLineNumber = "40"
          landmarkName = "+addWhiteToImage"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LEdgeDetection.cpp"
+         timestampString = "391348295.085987"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "16"
+         endingLineNumber = "16">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

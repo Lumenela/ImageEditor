@@ -17,5 +17,6 @@
 - (UIImage *)addImage:(UIImage *)image toImage:(UIImage *)image;
 - (UIImage *)subtractWhiteFromImage:(UIImage *)image;
 - (UIImage *)negativeFromImage:(UIImage *)image;
+- (UIImage *)detectEdgesOnImage:(UIImage *)image;
 
 @end

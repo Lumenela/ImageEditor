@@ -14,6 +14,7 @@
 #define SUBTRACT_WHITE_FILTERNAME @"Subtract white"
 #define NORMAL_FILTERNAME @"Normal"
 #define NEGATIVE_FILTERNAME @"Negative"
+#define EDGE_DETECTION_FILTERNAME @"Detect edges"
 
 @interface LFilterFactory : NSObject
 
