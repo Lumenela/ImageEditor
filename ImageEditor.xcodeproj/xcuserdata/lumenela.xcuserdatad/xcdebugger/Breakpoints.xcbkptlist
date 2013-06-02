@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "391337021.087443"
+         timestampString = "391889328.446023"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "300"
-         endingLineNumber = "300"
+         startingLineNumber = "335"
+         endingLineNumber = "335"
          landmarkName = "-collectionView:didSelectItemAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,24 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LViewController.m"
-         timestampString = "391337329.322125"
+         timestampString = "391886640.881868"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "310"
-         endingLineNumber = "310"
-         landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ImageEditor/LViewController.m"
-         timestampString = "391337067.77388"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
          landmarkName = "-enableUndo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,24 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ImageEditor/LFilterFactory.m"
-         timestampString = "391337101.739939"
+         timestampString = "391886640.881868"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "+subtractWhiteFromImage"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ImageEditor/LFilterFactory.m"
-         timestampString = "391337244.749497"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
          landmarkName = "+addWhiteToImage"
          landmarkType = "5">
       </FileBreakpoint>
@@ -91,6 +65,58 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "16"
          endingLineNumber = "16">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "391889328.446023"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "312"
+         endingLineNumber = "312"
+         landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "391889328.446023"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "399"
+         endingLineNumber = "399"
+         landmarkName = "-didPickSecondImage"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "391887945.458275"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "238"
+         endingLineNumber = "238"
+         landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ImageEditor/LViewController.m"
+         timestampString = "391889328.446023"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "408"
+         endingLineNumber = "408"
+         landmarkName = "-delayFilteringWithFilter:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

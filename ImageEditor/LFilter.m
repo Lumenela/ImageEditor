@@ -20,9 +20,26 @@
     }
     return nil;
 }
+
+- (id)initWithName:(NSString *)filterName andTwoImagesBlock:(UIImage * (^)(UIImage *, UIImage *))filterBlock
+{
+    self = [super init];
+    if (self) {
+        _filterName = filterName;
+        _advancedFilterBlock = filterBlock;
+        return self;
+    }
+    return nil;
+}
+
 - (UIImage *)filterImage:(UIImage *)image
 {
     return _filterBlock(image);
+}
+
+- (UIImage *)filterImage:(UIImage *)image withBackgroundImage:(UIImage *)backgroundImage
+{
+    return _advancedFilterBlock(image, backgroundImage);
 }
 
 @end

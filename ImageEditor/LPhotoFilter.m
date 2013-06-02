@@ -7,32 +7,15 @@
 //
 
 #import "LPhotoFilter.h"
-#import "UIImage+CIImageExtension.h"
+#import "UIImage+ImageFormatsExtension.h"
 #import "UIImage+InitializerExtension.h"
 
 @interface LPhotoFilter()
 
-@property (nonatomic, strong) UIImage *image;
 
 @end
 
 @implementation LPhotoFilter
-
-
-- (id)initWithImage:(UIImage *)image
-{
-    self = [super init];
-    if (self) {
-        _image = image;
-        return self;
-    }
-    return nil;
-}
-
-- (void)setImage:(UIImage *)image
-{
-    _image = image;
-}
 
 - (UIImage *)addWhiteToImage:(UIImage *)source
 {
@@ -67,11 +50,40 @@
 - (UIImage *)negativeFromImage:(UIImage *)source
 {
     CIImage *image = [UIImage ciImageFromUIImage:source];
-    CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorInvert"];
     [filter setDefaults];
     [filter setValue:image forKey:kCIInputImageKey];
     CIImage* outputImage = [filter valueForKey:kCIOutputImageKey];
     return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
+}
+
+- (UIImage *)addBackgroundImage:(UIImage *)backgroundImage toImage:(UIImage *)source
+{
+    CIImage *image = [UIImage ciImageFromUIImage:source];
+    CIImage *bgImage = [UIImage ciImageFromUIImage:backgroundImage];
+    CIFilter *imageAdditionFilter = [CIFilter filterWithName:@"CIAdditionCompositing"];
+    [imageAdditionFilter setDefaults];
+    [imageAdditionFilter setValue:image forKey:kCIInputImageKey];
+    [imageAdditionFilter setValue:bgImage forKey:kCIInputBackgroundImageKey];
+    CIImage *outputImage = [imageAdditionFilter outputImage];
+    return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
+}
+
+- (UIImage *)multiplyImage:(UIImage *)source byImage:(UIImage *)backgroundImage
+{
+    CIImage *image = [UIImage ciImageFromUIImage:source];
+    CIImage *bgImage = [UIImage ciImageFromUIImage:backgroundImage];
+    CIFilter *imageAdditionFilter = [CIFilter filterWithName:@"CIMultiplyCompositing"];
+    [imageAdditionFilter setDefaults];
+    [imageAdditionFilter setValue:image forKey:kCIInputImageKey];
+    [imageAdditionFilter setValue:bgImage forKey:kCIInputBackgroundImageKey];
+    CIImage *outputImage = [imageAdditionFilter outputImage];
+    return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
+}
+
+- (UIImage *)squareImage:(UIImage *)image
+{
+    return [self multiplyImage:image byImage:image];
 }
 
 - (UIImage *)detectEdgesOnImage:(UIImage *)image
@@ -80,11 +92,6 @@
 }
 
 - (UIImage *)addWhiteColorWithCoefficient:(int)coefficient toImage:(UIImage *)image
-{
-    return image;
-}
-
-- (UIImage *)addImage:(UIImage *)image toImage:(UIImage *)otherImage
 {
     return image;
 }

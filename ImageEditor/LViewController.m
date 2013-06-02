@@ -30,6 +30,10 @@
 @property (nonatomic, strong) NSArray *filterNamesArray;
 @property (nonatomic, strong) UIAlertView *alert;
 
+@property (nonatomic, strong) UIImage *secondImage;
+@property (nonatomic, assign) BOOL shouldPickSecondImage;
+@property (nonatomic, strong) LFilter *delayedFilter;
+
 @end
 
 
@@ -38,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _shouldPickSecondImage = NO;
     [self configureImagePlaceholder];
     [self configureCameraUI];
     [self configureCameraRollUI];
@@ -58,7 +63,10 @@
     _filterNamesArray = @[NORMAL_FILTERNAME,
                          ADD_WHITE_FILTERNAME,
                          SUBTRACT_WHITE_FILTERNAME,
-                         NEGATIVE_FILTERNAME];
+                         NEGATIVE_FILTERNAME,
+                         ADD_IMAGE_FILTERNAME,
+                         MULTIPLY_IMAGE_FILTERNAME,
+                         SQUARE_IMAGE_FILTERNAME];
     }
 
 - (void)configureImagePlaceholder
@@ -89,6 +97,7 @@
 - (void)configureInitialUI
 {
     self.title = @"CHOOSE PICTURE";
+    _shouldPickSecondImage = NO;
     _imageView.hidden = YES;
     _imageSelectionView.hidden = NO;
     _undoButton.enabled = NO;
@@ -219,7 +228,6 @@
 {
      [_imageView setImage:image];
      [_imageSelectionView setHidden:YES];
-    //[_imageView setNeedsDisplay];
 }
 
 #pragma mark - Image Picker Delegate
@@ -241,10 +249,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         }
         
         //UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
-        [self setImage:imageToSave];
-        _normalImage = imageToSave;
-        _photoFilter = [[LPhotoFilter alloc] initWithImage:_image];
-        [self configureEditingUI];
+        if (_shouldPickSecondImage) {
+            _secondImage = imageToSave;
+            [self didPickSecondImage];
+        } else {
+            [self setImage:imageToSave];
+            _normalImage = imageToSave;
+            [self configureEditingUI];
+        }
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -300,12 +312,25 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     if (_image) {
         _prevImage = [_image copy];
         NSString *filterName = _filterNamesArray[indexPath.row];
-        if (![filterName isEqualToString:NORMAL_FILTERNAME]) {
-            LFilter *filter = [LFilterFactory filterByName:filterName];
-            [self setImage:[filter filterImage:_image]];
-        } else {
+        if ([filterName isEqualToString:NORMAL_FILTERNAME]) {
             _image = [_normalImage copy];
             [self setImage:_image];
+        } else {
+            LFilter *filter = [LFilterFactory filterByName:filterName];
+            FilterType filterType = [LFilterFactory getFilterType:filter];
+            switch (filterType) {
+                case FilterWithOneInputImage: {
+                    [self setImage:[filter filterImage:_image]];
+                    break;
+                }
+                case FilterWithTwoInputImages: {
+                    [self delayFilteringWithFilter:filter];
+                    [self selectImageFromPhotoLibrary];
+                    break;
+                }
+                default:
+                    break;
+            }
         }
         
     }
@@ -365,6 +390,23 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)popoverControllerDidDismissPopover:(FPPopoverController *)popoverController
 {
     
+}
+
+#pragma mark - Internal logic
+
+- (void)didPickSecondImage
+{
+    if (_secondImage) {
+        [self setImage:[_delayedFilter filterImage:_image withBackgroundImage:_secondImage]];
+    }
+    _shouldPickSecondImage = NO;
+    _delayedFilter = nil;
+}
+
+- (void)delayFilteringWithFilter:(LFilter *)filter
+{
+    _shouldPickSecondImage = YES;
+    _delayedFilter = filter;
 }
 
 @end

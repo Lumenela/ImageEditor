@@ -12,8 +12,11 @@
 
 @property (nonatomic, strong) NSString *filterName;
 @property (nonatomic, copy) UIImage * (^filterBlock)(UIImage *);
+@property (nonatomic, copy) UIImage * (^advancedFilterBlock)(UIImage *, UIImage *);
 
 - (id)initWithName:(NSString *)filterName andBlock:(UIImage * (^)(UIImage *))filterBlock;
+- (id)initWithName:(NSString *)filterName andTwoImagesBlock:(UIImage * (^)(UIImage *, UIImage *))filterBlock;
 - (UIImage *)filterImage:(UIImage *)image;
+- (UIImage *)filterImage:(UIImage *)image withBackgroundImage:(UIImage *)backgroundImage;
 
 @end

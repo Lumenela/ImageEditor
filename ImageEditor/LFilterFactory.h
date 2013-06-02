@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "LFilter.h"
 
-#define DEFAULT_FILTERNAME @"Default filter"
-#define ADD_WHITE_FILTERNAME @"Add white"
-#define SUBTRACT_WHITE_FILTERNAME @"Subtract white"
-#define NORMAL_FILTERNAME @"Normal"
-#define NEGATIVE_FILTERNAME @"Negative"
-#define EDGE_DETECTION_FILTERNAME @"Detect edges"
+typedef enum {
+    FilterWithOneInputImage = 0,
+    FilterWithTwoInputImages = 1
+} FilterType;
 
 @interface LFilterFactory : NSObject
 
 + (LFilter *)filterByName:(NSString *)filterName;
++ (FilterType)getFilterType:(LFilter *)filter;
 
 @end

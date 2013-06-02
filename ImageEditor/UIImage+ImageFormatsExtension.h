@@ -1,5 +1,5 @@
 //
-//  UIImage+CIImageExtension.h
+//  UIImage+ImageFormatsExtension.h
 //  ImageEditor
 //
 //  Created by Sveta Dedunovich on 6/2/13.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (CIImageExtension)
+@interface UIImage (ImageFormatsExtension)
 
 + (CIImage *)ciImageFromUIImage:(UIImage *)source;
++ (NSData *)bitmapFromImage:(UIImage *)source;
 
 @end

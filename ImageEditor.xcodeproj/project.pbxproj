@@ -34,8 +34,9 @@
 		04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD8172A752D00F116EC /* FPTouchView.m */; };
 		04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FE0172A77CC00F116EC /* LSliderViewController.m */; };
 		04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */; };
-		A17A3386175B9BAF00ABD423 /* UIImage+CIImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */; };
+		A17A3386175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */; };
 		A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */; };
+		A17A338F175C022700ABD423 /* LPixelColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338E175C022600ABD423 /* LPixelColorHelper.m */; };
 		A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -81,10 +82,12 @@
 		04CD9FE0172A77CC00F116EC /* LSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSliderViewController.m; sourceTree = "<group>"; };
 		04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSliderViewController.xib; sourceTree = "<group>"; };
 		A17A3381175B96A000ABD423 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
-		A17A3383175B9A7300ABD423 /* UIImage+CIImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CIImageExtension.h"; sourceTree = "<group>"; };
-		A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CIImageExtension.m"; sourceTree = "<group>"; };
+		A17A3383175B9A7300ABD423 /* UIImage+ImageFormatsExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFormatsExtension.h"; sourceTree = "<group>"; };
+		A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageFormatsExtension.m"; sourceTree = "<group>"; };
 		A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+InitializerExtension.h"; sourceTree = "<group>"; };
 		A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+InitializerExtension.m"; sourceTree = "<group>"; };
+		A17A338D175C022600ABD423 /* LPixelColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPixelColorHelper.h; sourceTree = "<group>"; };
+		A17A338E175C022600ABD423 /* LPixelColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPixelColorHelper.m; sourceTree = "<group>"; };
 		A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFilterEngine.h; sourceTree = "<group>"; };
 		A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFilterFactory.h; sourceTree = "<group>"; };
 		A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFilterFactory.m; sourceTree = "<group>"; };
@@ -227,10 +230,12 @@
 		A17A3382175B9A4000ABD423 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A17A3383175B9A7300ABD423 /* UIImage+CIImageExtension.h */,
-				A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */,
+				A17A3383175B9A7300ABD423 /* UIImage+ImageFormatsExtension.h */,
+				A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */,
 				A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */,
 				A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */,
+				A17A338D175C022600ABD423 /* LPixelColorHelper.h */,
+				A17A338E175C022600ABD423 /* LPixelColorHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -333,8 +338,9 @@
 				04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */,
 				04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */,
 				A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */,
-				A17A3386175B9BAF00ABD423 /* UIImage+CIImageExtension.m in Sources */,
+				A17A3386175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m in Sources */,
 				A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */,
+				A17A338F175C022700ABD423 /* LPixelColorHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
