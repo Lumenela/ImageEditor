@@ -7,6 +7,8 @@
 //
 
 #import "LPhotoFilter.h"
+#import "UIImage+CIImageExtension.h"
+#import "UIImage+InitializerExtension.h"
 
 @interface LPhotoFilter()
 
@@ -34,18 +36,7 @@
 
 - (UIImage *)addWhiteToImage:(UIImage *)source
 {
-    CIImage *ci = source.CIImage;
-    CGImage *cg = source.CGImage;
-    CIImage *image;
-    if (cg) {
-        image = [[CIImage alloc] initWithCGImage:cg];
-    } else if (ci) {
-        image = ci;
-    }
-    if (!image) {
-        return nil;
-    }
-    
+    CIImage *image = [UIImage ciImageFromUIImage:source];
     CIFilter *colorMatrixFilter = [CIFilter filterWithName:@"CIColorMatrix"];
     [colorMatrixFilter setDefaults];
     [colorMatrixFilter setValue:image forKey:kCIInputImageKey];
@@ -55,24 +46,12 @@
     [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:0 W:1] forKey:@"inputAVector"];
     [colorMatrixFilter setValue:[CIVector vectorWithX:0.1 Y:0.1 Z:0.1 W:0] forKey:@"inputBiasVector"];
     CIImage *outputImage = [colorMatrixFilter outputImage];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
-    return res;
+    return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
 }
 
 - (UIImage *)subtractWhiteFromImage:(UIImage *)source
 {
-    CIImage *ci = source.CIImage;
-    CGImage *cg = source.CGImage;
-    CIImage *image;
-    if (cg) {
-        image = [[CIImage alloc] initWithCGImage:cg];
-    } else if (ci) {
-        image = ci;
-    }
-    if (!image) {
-        return nil;
-    }
+    CIImage *image = [UIImage ciImageFromUIImage:source];
     CIFilter *colorMatrixFilter = [CIFilter filterWithName:@"CIColorMatrix"];
     [colorMatrixFilter setDefaults];
     [colorMatrixFilter setValue:image forKey:kCIInputImageKey];
@@ -82,31 +61,17 @@
     [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:0 W:1] forKey:@"inputAVector"];
     [colorMatrixFilter setValue:[CIVector vectorWithX:-0.1 Y:-0.1 Z:-0.1 W:0] forKey:@"inputBiasVector"];
     CIImage *outputImage = [colorMatrixFilter outputImage];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
-    return res;
+    return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
 }
 
 - (UIImage *)negativeFromImage:(UIImage *)source
 {
-    CIImage *ci = source.CIImage;
-    CGImage *cg = source.CGImage;
-    CIImage *image;
-    if (cg) {
-        image = [[CIImage alloc] initWithCGImage:cg];
-    } else if (ci) {
-        image = ci;
-    }
-    if (!image) {
-        return nil;
-    }
+    CIImage *image = [UIImage ciImageFromUIImage:source];
     CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
     [filter setDefaults];
     [filter setValue:image forKey:kCIInputImageKey];
     CIImage* outputImage = [filter valueForKey:kCIOutputImageKey];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    UIImage *res = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:[outputImage extent]]];
-    return res;
+    return [UIImage imageWithOriginalSizeFromCIImage:outputImage];
 }
 
 - (UIImage *)detectEdgesOnImage:(UIImage *)image

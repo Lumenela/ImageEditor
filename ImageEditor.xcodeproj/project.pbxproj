@@ -15,7 +15,7 @@
 		042913F517299BDA00153650 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F017299BDA00153650 /* undo.png */; };
 		042913F71729A39300153650 /* contrast.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913F61729A39300153650 /* contrast.png */; };
 		042913FB1729BB2400153650 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 042913FA1729BB2400153650 /* sample.png */; };
-		0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0447A8F5172934A500789461 /* LPhotoFilter.mm */; };
+		0447A8F6172934A500789461 /* LPhotoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A8F5172934A500789461 /* LPhotoFilter.m */; };
 		0447A90B17293F7C00789461 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447A90A17293F7C00789461 /* CoreImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		048A01F71728929F004A3925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F61728929F004A3925 /* UIKit.framework */; };
 		048A01F91728929F004A3925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A01F81728929F004A3925 /* Foundation.framework */; };
@@ -34,6 +34,8 @@
 		04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD8172A752D00F116EC /* FPTouchView.m */; };
 		04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FE0172A77CC00F116EC /* LSliderViewController.m */; };
 		04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */; };
+		A17A3386175B9BAF00ABD423 /* UIImage+CIImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */; };
+		A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */; };
 		A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +50,7 @@
 		042913F61729A39300153650 /* contrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contrast.png; path = ImageEditor/icons/contrast.png; sourceTree = "<group>"; };
 		042913FA1729BB2400153650 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ImageEditor/icons/sample.png; sourceTree = "<group>"; };
 		0447A8F4172934A500789461 /* LPhotoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPhotoFilter.h; sourceTree = "<group>"; };
-		0447A8F5172934A500789461 /* LPhotoFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LPhotoFilter.mm; sourceTree = "<group>"; };
+		0447A8F5172934A500789461 /* LPhotoFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPhotoFilter.m; sourceTree = "<group>"; };
 		0447A8F7172937FE00789461 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		0447A90A17293F7C00789461 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -79,6 +81,10 @@
 		04CD9FE0172A77CC00F116EC /* LSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSliderViewController.m; sourceTree = "<group>"; };
 		04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSliderViewController.xib; sourceTree = "<group>"; };
 		A17A3381175B96A000ABD423 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
+		A17A3383175B9A7300ABD423 /* UIImage+CIImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CIImageExtension.h"; sourceTree = "<group>"; };
+		A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CIImageExtension.m"; sourceTree = "<group>"; };
+		A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+InitializerExtension.h"; sourceTree = "<group>"; };
+		A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+InitializerExtension.m"; sourceTree = "<group>"; };
 		A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFilterEngine.h; sourceTree = "<group>"; };
 		A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFilterFactory.h; sourceTree = "<group>"; };
 		A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFilterFactory.m; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		0447A8F0172932C100789461 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A17A3382175B9A4000ABD423 /* Utilities */,
 				A1E4C2F217536C9000B050B4 /* Filters */,
 				A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */,
 			);
@@ -167,7 +174,6 @@
 		048A01FC1728929F004A3925 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
-				A17A3381175B96A000ABD423 /* ARCMacros.h */,
 				04CD9FD4172A74F900F116EC /* Views */,
 				04CD9FCF172A748100F116EC /* ViewControllers */,
 				0447A8F0172932C100789461 /* Core */,
@@ -209,6 +215,7 @@
 		04CD9FD4172A74F900F116EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A17A3381175B96A000ABD423 /* ARCMacros.h */,
 				04CD9FD5172A752D00F116EC /* FPPopoverView.h */,
 				04CD9FD6172A752D00F116EC /* FPPopoverView.m */,
 				04CD9FD7172A752D00F116EC /* FPTouchView.h */,
@@ -217,13 +224,24 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		A17A3382175B9A4000ABD423 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A17A3383175B9A7300ABD423 /* UIImage+CIImageExtension.h */,
+				A17A3385175B9BAF00ABD423 /* UIImage+CIImageExtension.m */,
+				A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */,
+				A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		A1E4C2F217536C9000B050B4 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
 				A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */,
 				A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */,
 				0447A8F4172934A500789461 /* LPhotoFilter.h */,
-				0447A8F5172934A500789461 /* LPhotoFilter.mm */,
+				0447A8F5172934A500789461 /* LPhotoFilter.m */,
 				042913E71729833300153650 /* LFilter.h */,
 				042913E81729833300153650 /* LFilter.m */,
 			);
@@ -308,13 +326,15 @@
 				048A0203172892A0004A3925 /* main.m in Sources */,
 				048A0207172892A1004A3925 /* LAppDelegate.m in Sources */,
 				048A0213172892A3004A3925 /* LViewController.m in Sources */,
-				0447A8F6172934A500789461 /* LPhotoFilter.mm in Sources */,
+				0447A8F6172934A500789461 /* LPhotoFilter.m in Sources */,
 				042913E91729833300153650 /* LFilter.m in Sources */,
 				04CD9FD3172A74ED00F116EC /* FPPopoverController.m in Sources */,
 				04CD9FD9172A752D00F116EC /* FPPopoverView.m in Sources */,
 				04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */,
 				04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */,
 				A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */,
+				A17A3386175B9BAF00ABD423 /* UIImage+CIImageExtension.m in Sources */,
+				A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
