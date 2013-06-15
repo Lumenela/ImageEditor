@@ -34,9 +34,9 @@
 		04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FD8172A752D00F116EC /* FPTouchView.m */; };
 		04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD9FE0172A77CC00F116EC /* LSliderViewController.m */; };
 		04CD9FE3172A77CC00F116EC /* LSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */; };
-		A17A3386175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */; };
+		A17A3386175B9BAF00ABD423 /* UIImage+ImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A3385175B9BAF00ABD423 /* UIImage+ImageExtension.m */; };
 		A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */; };
-		A17A338F175C022700ABD423 /* LPixelColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338E175C022600ABD423 /* LPixelColorHelper.m */; };
+		A17A338F175C022700ABD423 /* LPixelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A338E175C022600ABD423 /* LPixelHelper.m */; };
 		A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +52,6 @@
 		042913FA1729BB2400153650 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample.png; path = ImageEditor/icons/sample.png; sourceTree = "<group>"; };
 		0447A8F4172934A500789461 /* LPhotoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPhotoFilter.h; sourceTree = "<group>"; };
 		0447A8F5172934A500789461 /* LPhotoFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPhotoFilter.m; sourceTree = "<group>"; };
-		0447A8F7172937FE00789461 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		0447A90A17293F7C00789461 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		048A01F21728929F004A3925 /* ImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A01F61728929F004A3925 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -82,12 +80,12 @@
 		04CD9FE0172A77CC00F116EC /* LSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSliderViewController.m; sourceTree = "<group>"; };
 		04CD9FE1172A77CC00F116EC /* LSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSliderViewController.xib; sourceTree = "<group>"; };
 		A17A3381175B96A000ABD423 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
-		A17A3383175B9A7300ABD423 /* UIImage+ImageFormatsExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFormatsExtension.h"; sourceTree = "<group>"; };
-		A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageFormatsExtension.m"; sourceTree = "<group>"; };
+		A17A3383175B9A7300ABD423 /* UIImage+ImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageExtension.h"; sourceTree = "<group>"; };
+		A17A3385175B9BAF00ABD423 /* UIImage+ImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageExtension.m"; sourceTree = "<group>"; };
 		A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+InitializerExtension.h"; sourceTree = "<group>"; };
 		A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+InitializerExtension.m"; sourceTree = "<group>"; };
-		A17A338D175C022600ABD423 /* LPixelColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPixelColorHelper.h; sourceTree = "<group>"; };
-		A17A338E175C022600ABD423 /* LPixelColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPixelColorHelper.m; sourceTree = "<group>"; };
+		A17A338D175C022600ABD423 /* LPixelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPixelHelper.h; sourceTree = "<group>"; };
+		A17A338E175C022600ABD423 /* LPixelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPixelHelper.m; sourceTree = "<group>"; };
 		A1E4C2EE1752BAC000B050B4 /* LFilterEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFilterEngine.h; sourceTree = "<group>"; };
 		A1E4C2EF1752BB7F00B050B4 /* LFilterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFilterFactory.h; sourceTree = "<group>"; };
 		A1E4C2F01752BB7F00B050B4 /* LFilterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFilterFactory.m; sourceTree = "<group>"; };
@@ -164,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				0447A90A17293F7C00789461 /* CoreImage.framework */,
-				0447A90317293B1500789461 /* libstdc++.6.0.9.dylib */,
-				0447A8F7172937FE00789461 /* libz.dylib */,
 				048A02191728ABAB004A3925 /* MobileCoreServices.framework */,
 				048A01F61728929F004A3925 /* UIKit.framework */,
 				048A01F81728929F004A3925 /* Foundation.framework */,
@@ -230,12 +226,12 @@
 		A17A3382175B9A4000ABD423 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A17A3383175B9A7300ABD423 /* UIImage+ImageFormatsExtension.h */,
-				A17A3385175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m */,
+				A17A3383175B9A7300ABD423 /* UIImage+ImageExtension.h */,
+				A17A3385175B9BAF00ABD423 /* UIImage+ImageExtension.m */,
 				A17A338A175B9DB300ABD423 /* UIImage+InitializerExtension.h */,
 				A17A338B175B9DB300ABD423 /* UIImage+InitializerExtension.m */,
-				A17A338D175C022600ABD423 /* LPixelColorHelper.h */,
-				A17A338E175C022600ABD423 /* LPixelColorHelper.m */,
+				A17A338D175C022600ABD423 /* LPixelHelper.h */,
+				A17A338E175C022600ABD423 /* LPixelHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -338,9 +334,9 @@
 				04CD9FDA172A752D00F116EC /* FPTouchView.m in Sources */,
 				04CD9FE2172A77CC00F116EC /* LSliderViewController.m in Sources */,
 				A1E4C2F11752BB7F00B050B4 /* LFilterFactory.m in Sources */,
-				A17A3386175B9BAF00ABD423 /* UIImage+ImageFormatsExtension.m in Sources */,
+				A17A3386175B9BAF00ABD423 /* UIImage+ImageExtension.m in Sources */,
 				A17A338C175B9DB300ABD423 /* UIImage+InitializerExtension.m in Sources */,
-				A17A338F175C022700ABD423 /* LPixelColorHelper.m in Sources */,
+				A17A338F175C022700ABD423 /* LPixelHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +367,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -399,8 +395,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

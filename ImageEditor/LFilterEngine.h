@@ -13,10 +13,12 @@
 #define SUBTRACT_WHITE_FILTERNAME @"Subtract white"
 #define NORMAL_FILTERNAME @"Normal"
 #define NEGATIVE_FILTERNAME @"Negative"
-#define EDGE_DETECTION_FILTERNAME @"Detect edges"
+#define SEGMENTATE_IMAGE_FILTERNAME @"Binarize"
 #define ADD_IMAGE_FILTERNAME @"Add image"
 #define MULTIPLY_IMAGE_FILTERNAME @"Multiply image"
-#define SQUARE_IMAGE_FILTERNAME @"Square of the image"
+#define SQUARE_IMAGE_FILTERNAME @"Square"
+#define ENHANCE_IMAGE_FILTERNAME @"Enhace image"
+#define GRAYSCALE_FILTERNAME @"Grayscale"
 
 @protocol LFilterEngine <NSObject>
 
@@ -27,6 +29,8 @@
 - (UIImage *)subtractWhiteFromImage:(UIImage *)image;
 - (UIImage *)negativeFromImage:(UIImage *)image;
 - (UIImage *)multiplyImage:(UIImage *)source byImage:(UIImage *)backgroundImage;
-- (UIImage *)detectEdgesOnImage:(UIImage *)image;
+- (UIImage *)segmentateImage:(UIImage *)image;
+- (UIImage *)enhance:(UIImage *)image;
+- (UIImage *)grayScale:(UIImage *)image;
 
 @end

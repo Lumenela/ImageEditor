@@ -66,7 +66,8 @@
                          NEGATIVE_FILTERNAME,
                          ADD_IMAGE_FILTERNAME,
                          MULTIPLY_IMAGE_FILTERNAME,
-                         SQUARE_IMAGE_FILTERNAME];
+                         SQUARE_IMAGE_FILTERNAME,
+                         GRAYSCALE_FILTERNAME];
     }
 
 - (void)configureImagePlaceholder
@@ -147,6 +148,7 @@
 
 - (void)setImage:(UIImage *)image
 {
+    _autoContrastButton.enabled = YES;
     _image = image;
     _imageView.image = _image;
 }
@@ -167,6 +169,15 @@
 - (void)cancel
 {
     [self configureInitialUI];
+}
+
+- (IBAction)enhance:(id)sender
+{
+    if (_image) {
+        _prevImage = [_image copy];
+        LFilter *filter = [LFilterFactory filterByName:ENHANCE_IMAGE_FILTERNAME];
+        [self setImage:[filter filterImage:_image]];
+    }
 }
 
 - (IBAction)undo:(id)sender

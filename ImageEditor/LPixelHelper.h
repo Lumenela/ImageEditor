@@ -1,5 +1,5 @@
 //
-//  LPixelColorHelper.h
+//  LPixelHelper.h
 //  ImageEditor
 //
 //  Created by Sveta Dedunovich on 6/3/13.
@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LPixelColorHelper : NSObject
+@interface LPixelHelper : NSObject
 
 + (UIColor *)byteToUIColor:(Byte)byte;
 + (Byte)UIColorToByte:(UIColor *)color;
++ (float *)UIColorToFloatArray:(UIColor *)color;
 
 @end

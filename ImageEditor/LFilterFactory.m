@@ -23,8 +23,8 @@
     if ([filterName isEqualToString:NEGATIVE_FILTERNAME]) {
         return [LFilterFactory negativeFromImage];
     }
-    if ([filterName isEqualToString:EDGE_DETECTION_FILTERNAME]) {
-        return [LFilterFactory detectEdgesOnImage];
+    if ([filterName isEqualToString:SEGMENTATE_IMAGE_FILTERNAME]) {
+        return [LFilterFactory binarizeImage];
     }
     if ([filterName isEqualToString:ADD_IMAGE_FILTERNAME]) {
         return [LFilterFactory addBackgroundImageToImage];
@@ -34,6 +34,12 @@
     }
     if ([filterName isEqualToString:SQUARE_IMAGE_FILTERNAME]) {
         return [LFilterFactory squareImage];
+    }
+    if ([filterName isEqualToString:ENHANCE_IMAGE_FILTERNAME]) {
+        return [LFilterFactory enhanceImage];
+    }
+    if ([filterName isEqualToString:GRAYSCALE_FILTERNAME]) {
+        return [LFilterFactory grayScaleImage];
     }
     return [LFilterFactory defaultFilter];
 }
@@ -138,16 +144,43 @@
 }
 
 
-+ (LFilter *)detectEdgesOnImage
++ (LFilter *)binarizeImage
 {
     id<LFilterEngine> filterEngine = [ApplicationDelegate filterEngine];
     UIImage * (^filterBlock)(UIImage *image) = ^UIImage *(UIImage *image) {
-        UIImage *res = [filterEngine detectEdgesOnImage:image];
+        UIImage *res = [filterEngine segmentateImage:image];
         [[NSNotificationCenter defaultCenter] postNotificationName:ImageFilterAppliedNotificationName object:nil];
         return res;
     };
 
-    LFilter *filter = [[LFilter alloc] initWithName:EDGE_DETECTION_FILTERNAME andBlock:filterBlock];
+    LFilter *filter = [[LFilter alloc] initWithName:SEGMENTATE_IMAGE_FILTERNAME andBlock:filterBlock];
+    return filter;
+}
+
++ (LFilter *)grayScaleImage
+{
+    id<LFilterEngine> filterEngine = [ApplicationDelegate filterEngine];
+    UIImage * (^filterBlock)(UIImage *image) = ^UIImage *(UIImage *image) {
+        UIImage *res = [filterEngine grayScale:image];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ImageFilterAppliedNotificationName object:nil];
+        return res;
+    };
+
+    LFilter *filter = [[LFilter alloc] initWithName:GRAYSCALE_FILTERNAME andBlock:filterBlock];
+    return filter;
+}
+
+
++ (LFilter *)enhanceImage
+{
+    id<LFilterEngine> filterEngine = [ApplicationDelegate filterEngine];
+    UIImage * (^filterBlock)(UIImage *image) = ^UIImage *(UIImage *image) {
+        UIImage *res = [filterEngine enhance:image];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ImageFilterAppliedNotificationName object:nil];
+        return res;
+    };
+
+    LFilter *filter = [[LFilter alloc] initWithName:ENHANCE_IMAGE_FILTERNAME andBlock:filterBlock];
     return filter;
 }
 

@@ -32,5 +32,6 @@
 
 - (IBAction)undo:(id)sender;
 - (IBAction)configure:(id)sender;
+- (IBAction)enhance:(id)sender;
 
 @end
